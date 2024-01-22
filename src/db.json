@@ -1,25 +1,16 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "validDate": "",
-      "name": "",
-      "acct": "2315162",
-      "amount": "20000",
-      "category": "Income",
-      "message": "you have sent $undefined to  (undefined)"
-    },
-    {
-      "id": 2,
+      "id": "2",
       "validDate": "",
       "name": "samuel",
-      "acct": "72526289",
-      "amount": "5000",
-      "category": "",
-      "message": "you have sent $5000 to samuel (72526289)"
+      "acct": "5467235367",
+      "amount": "70000",
+      "category": "Income",
+      "message": "you have sent $70000 to samuel (5467235367)"
     },
     {
-      "id": 3,
+      "id": "3",
       "validDate": "",
       "name": "james",
       "acct": "52272181",
@@ -28,13 +19,31 @@
       "message": "you have sent $6473828 to james (52272181)"
     },
     {
-      "id": 4,
+      "id": "4",
       "validDate": "0005-05-05",
       "name": "saka",
       "acct": "5262219737",
       "amount": "2000",
       "category": "Income",
       "message": "you have sent $2000 to  saka(5262219737)"
+    },
+    {
+      "id": 5,
+      "validDate": "0004-04-04",
+      "name": "jeffery",
+      "acct": "562821922",
+      "amount": "40000",
+      "category": "expense",
+      "message": "you have sent $40000 to  jeffery(562821922)"
+    },
+    {
+      "id": 6,
+      "validDate": "0002-02-22",
+      "name": "ankit",
+      "acct": "12839201",
+      "amount": "20",
+      "category": "expense",
+      "message": "you have sent $20 to  ankit(12839201)"
     }
   ]
 }
