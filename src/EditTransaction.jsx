@@ -18,7 +18,7 @@ const EditTransaction = () => {
             <div className='flex-grow gap-3 pt-5 overflow-y-auto bg-blue-600 flex-cols-2 rounded-b-3xl'>
              <div className="flex justify-between w-full p-2 px-24 "><p className="">RECIPIENT'S NAME:</p><p className="flex p-2 place-items-start">{transaction.name}</p></div>
              <div className="flex justify-between w-full p-2 px-24 "><p className="">RECIPIENT'S ACCT:</p><p className="flex p-2 place-items-start">{transaction.acct}</p></div>
-             <div className="flex justify-between w-full p-2 px-24 "><p className="">AMOUNT:</p><p className="flex p-2 place-items-start">{transaction.amount}</p></div>
+             <div className="flex justify-between w-full p-2 px-24 "><p className="">AMOUNT:</p><p className="flex p-2 place-items-start">${transaction.amount}</p></div>
              <div className="flex justify-between w-full p-2 px-24 "><p className="">TRANSACTION CATEGORY:</p><p className="flex p-2 place-items-start">{transaction.category}</p></div>
              <div className="flex justify-between w-full p-2 px-24 pt-10 "><p className="">MESSAGE:</p><p className="flex p-2 text-red-300 place-items-start">{transaction.message.toUpperCase()}</p></div>
             </div>
