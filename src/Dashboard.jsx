@@ -25,12 +25,12 @@ const Dashboard = () => {
     <main className="h-full overflow-y-scroll">
         <section className="h-full bg-gray-300">
             {/* if there is transaction loads out the total transaction in digit */}
-            { transactions?.length ? <p>Total transactions: {transactions.length}</p> : <p>No transaction</p> }
+            { transactions?.length ? <p className="p-2">Total transactions: {transactions.length}</p> : <p>No transaction</p> }
             <ul className="flex flex-row justify-between">
                 <li className="pl-2">ID</li>
                 <li>RECIPIENT'S NAME</li>
                 <li>RECIPIENT'S ACCT</li>
-                <li className="pr-2">AMOUNT: $</li>
+                <li className="pr-2">AMOUNT</li>
             </ul>
             {transactions?.length ? transactions.map((transaction) => (
             <>

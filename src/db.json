@@ -1,74 +1,13 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "date": "August 31, 2023 1:01:26 PM",
-      "name": "Samuel porch",
-      "acct": "232470918",
-      "amount": "$200",
-      "message": "you have sent $200 to Samuel porch(232470918)"
-    },
-    {
-      "id": 2,
-      "date": "August 31, 2023 1:01:26 PM",
-      "name": "Samuel porch",
-      "acct": "232470918",
-      "amount": "$500",
-      "message": "you have sent $500 to Samuel porch(232470918)"
-    },
-    {
-      "id": 3,
+      "id": "1",
       "validDate": "0002-02-22",
-      "name": "w",
-      "validAcct": "2",
-      "validAmount": "20",
-      "category": "Income",
-      "message": "you have sent 20 to w2"
-    },
-    {
-      "id": 4,
-      "validDate": "0002-02-22",
-      "name": "w",
-      "acct": "2",
+      "name": "john",
+      "acct": "23",
       "amount": "20",
       "category": "Income",
-      "message": "you have sent 20 to w2"
-    },
-    {
-      "id": 4,
-      "validDate": "0002-02-22",
-      "name": "w",
-      "acct": "2",
-      "amount": "20",
-      "category": "Income",
-      "message": "you have sent 20 to w2"
-    },
-    {
-      "id": 5,
-      "validDate": "0002-02-22",
-      "name": "sa",
-      "acct": "22222",
-      "amount": "22",
-      "category": "Income",
-      "message": "you have sent 22 to {$} sa(22222)"
-    },
-    {
-      "id": 1,
-      "validDate": "0002-02-22",
-      "name": "sam",
-      "acct": "22",
-      "amount": "222",
-      "category": "Income",
-      "message": "you have sent 222 to $ sam(22)"
-    },
-    {
-      "id": 6,
-      "validDate": "0002-02-22",
-      "name": "samuel",
-      "acct": "20",
-      "amount": "20",
-      "category": "Income",
-      "message": "you have sent $20 to  samuel(20)"
+      "message": "you have sent 20 to  john(23)"
     }
   ]
 }
