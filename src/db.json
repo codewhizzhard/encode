@@ -1,7 +1,7 @@
 {
   "transactions": [
     {
-      "id": "11",
+      "id": 1,
       "validDate": "",
       "name": "",
       "acct": "2315162",
@@ -10,7 +10,7 @@
       "message": "you have sent $undefined to  (undefined)"
     },
     {
-      "id": "111",
+      "id": 2,
       "validDate": "",
       "name": "samuel",
       "acct": "72526289",
@@ -19,7 +19,7 @@
       "message": "you have sent $5000 to samuel (72526289)"
     },
     {
-      "id": "1111",
+      "id": 3,
       "validDate": "",
       "name": "james",
       "acct": "52272181",
@@ -28,7 +28,7 @@
       "message": "you have sent $6473828 to james (52272181)"
     },
     {
-      "id": "11111",
+      "id": 4,
       "validDate": "0005-05-05",
       "name": "saka",
       "acct": "5262219737",
