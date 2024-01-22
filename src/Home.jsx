@@ -20,7 +20,7 @@ const Home = () => {
         <input type="text" id="acct-no" name="acct-no" required placeholder="recipient's acc no" className="w-1/2 h-8 pl-2 rounded-lg" value={acct} onChange={(e) => setAcct(e.target.value)}/>
         </div>
         <div>
-        <input type="number" id="amount" name="amount" min={10} required placeholder="amount to be transferred" className="w-1/2 h-8 pl-2 rounded-lg" value={amount} onChange={(e) => setAmount(e.target.value)}/>
+        <input type="number" id="amount" name="amount" min={10} required placeholder="amount to be transferred in $" className="w-1/2 h-8 pl-2 rounded-lg" value={amount} onChange={(e) => setAmount(e.target.value)}/>
         </div>
         <div>
         <input type="date" id="date" required name="date" className="w-1/2 h-8 pl-2 rounded-lg" value={date} onChange={(e) => setDate(e.target.value)}/>

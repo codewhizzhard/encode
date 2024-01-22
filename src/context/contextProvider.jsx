@@ -18,11 +18,14 @@ export const ContextProvider = ({ children }) => {
     const [date, setDate] = useState("");
     const [clicked, setClicked] = useState(false)
     const [validDate, setValidDate] = useState("");
+    const [editAmount, setEditAmount] = useState();
+    const [editAcct, setEditAcct] = useState();
+    const [popUp, setPopUp] = useState(false)
 
     // add more transaction to the transaction in the array
     const addedTransaction = async() => {
         const id = transactions.length ? transactions[transactions.length -1].id + 1 : 1 
-        const message = `you have sent ${validAmount} to  ${name}(${validAcct})`
+        const message = `you have sent $${validAmount} to  ${name}(${validAcct})`
         const addedtransaction = {id, validDate, name, acct, amount, category, message}
         try {
           const response = await axios.post("/transactions", addedtransaction)
@@ -50,6 +53,7 @@ export const ContextProvider = ({ children }) => {
         }
         fetchData()
       }, [])
+
       // handleDelete handles the deletion of transaction
       const handleDelete = async(id) => {
         const deleteTransaction = transactions.filter((transaction) => transaction.id !== id)
@@ -57,9 +61,22 @@ export const ContextProvider = ({ children }) => {
         await axios.delete(`/transactions/${id}`)
         
       }
+      const handleEdit = async(id) => {
+        const message = `you have sent $${validAmount} to  ${name}(${validAcct})`
+        const edit = {id, validDate: validDate, name: name, acct: editAcct, amount: editAmount, category: category, message: message}
+        try {
+          const response = await axios.put(`/transactions/${id}`, edit)
+          setTransactions(transactions.map((transaction) => transaction.id === id ? {...response.data} : transaction))
+        } catch(err) {
+          console.log(err.response)
+        } finally {
+          setPopUp(false)
+        }
+
+      }
 
     
-    const returnedValue = {amount, setAmount, acct, setAcct, category, setCategory, date, setDate, clicked, setClicked, validAmount, setValidAmount, validAcct, setValidAcct, transactions, name, setName, addedTransaction, handleDelete, validDate, setValidDate }
+    const returnedValue = {amount, setAmount, acct, setAcct, category, setCategory, date, setDate, clicked, setClicked, validAmount, setValidAmount, validAcct, setValidAcct, transactions, name, setName, addedTransaction, handleDelete, validDate, setValidDate, editAmount, setEditAmount, editAcct, setEditAcct, handleEdit, popUp, setPopUp }
     return (
         <DataContext.Provider value={returnedValue}>
             {children}
