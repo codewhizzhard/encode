@@ -61,6 +61,7 @@ export const ContextProvider = ({ children }) => {
         await axios.delete(`/transactions/${id}`)
         
       }
+      // edit function, to edit only amount and account number
       const handleEdit = async(id) => {
         const message = `you have sent $${validAmount} to  ${name}(${validAcct})`
         const edit = {id, validDate: validDate, name: name, acct: editAcct, amount: editAmount, category: category, message: message}

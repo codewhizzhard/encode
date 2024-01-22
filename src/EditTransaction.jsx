@@ -32,7 +32,7 @@ const EditTransaction = () => {
         </li>
         { popUp &&
           <section className="absolute h-[40%] bg-red-500 top-20 w-[70%] left-28 border-4">
-          <form className="grid pt-10 place-content-center" onSubmit={(e) => e.preventDefault()}>
+          <form className="grid pt-5 place-content-center" onSubmit={(e) => e.preventDefault()}>
             <article>
               <label htmlFor="editamount" className="block">Edit Amount:</label>
               <input type="number" id="editamount" required autoFocus className="text-black" value={editAmount} onChange={(e) => setEditAmount(e.target.value)}/>

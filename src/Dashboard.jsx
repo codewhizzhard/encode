@@ -22,7 +22,7 @@ const Dashboard = () => {
         fetchData()
     }, [])
   return (
-    <main className="overflow-y-scroll">
+    <main className="h-full overflow-y-scroll">
         <section className="h-full bg-gray-300">
             {/* if there is transaction loads out the total transaction in digit */}
             { transactions?.length ? <p className="p-2">Total transactions: {transactions.length}</p> : <p>No transaction</p> }
