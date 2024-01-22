@@ -10,9 +10,9 @@ const Currency = () => {
           <ol className="pt-5 pl-72 text-start">
             <li>pull the repository from github to your code editor</li>
             <li>cd into the encode repository: cd encode</li>
-            <li>write this in the terminal: npx json-server -p 3000 -w data/db.json to start watching for the server</li>
+            <li>write this in the terminal: (npx json-server -p 3000 -w src/db.json) to start watching for the server</li>
             <li>then inpute this in terminal: npm run dev, to start the project</li>
-            <li>then ctr left click on the port, make sure the port is the same with the one in npx json-server -p (the same port)</li>
+            <li>then ctr left click on the port</li>
             <li>then send and receive your data</li>
           </ol>
         </article>
