@@ -21,7 +21,6 @@ export const ContextProvider = ({ children }) => {
     const [editAmount, setEditAmount] = useState();
     const [editAcct, setEditAcct] = useState();
     const [popUp, setPopUp] = useState(false)
-    const [editName, setEditName] = useState("");
 
     // add more transaction to the transaction in the array
     const addedTransaction = async() => {
@@ -69,6 +68,8 @@ export const ContextProvider = ({ children }) => {
         try {
           const response = await axios.put(`/transactions/${id}`, edit)
           setTransactions(transactions.map((transaction) => transaction.id === id ? {...response.data} : transaction))
+          setEditAcct("")
+          setEditAmount("")
         } catch(err) {
           console.log(err.response)
         } finally {
