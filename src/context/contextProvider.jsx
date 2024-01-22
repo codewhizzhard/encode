@@ -21,6 +21,8 @@ export const ContextProvider = ({ children }) => {
     const [editAmount, setEditAmount] = useState();
     const [editAcct, setEditAcct] = useState();
     const [popUp, setPopUp] = useState(false)
+    const [search, setSearch] = useState("");
+    const [searchResult, setSearchResult] = useState([]);
 
     // add more transaction to the transaction in the array
     const addedTransaction = async() => {
@@ -54,6 +56,13 @@ export const ContextProvider = ({ children }) => {
         fetchData()
       }, [])
 
+      // filtering the transaction based on search input: name or id
+      useEffect(() => {
+        const filteredResult = transactions.filter((transaction) => (transaction.name).toLowerCase().includes(search.toLowerCase()) || 
+          ((transaction.id).toString() === search))
+        setSearchResult(filteredResult.reverse())
+      }, [transactions, search])
+
       // handleDelete handles the deletion of transaction
       const handleDelete = async(id) => {
         const deleteTransaction = transactions.filter((transaction) => transaction.id !== id)
@@ -79,7 +88,7 @@ export const ContextProvider = ({ children }) => {
       }
 
     
-    const returnedValue = {amount, setAmount, acct, setAcct, category, setCategory, date, setDate, clicked, setClicked, validAmount, setValidAmount, validAcct, setValidAcct, transactions, name, setName, addedTransaction, handleDelete, validDate, setValidDate, editAmount, setEditAmount, editAcct, setEditAcct, handleEdit, popUp, setPopUp }
+    const returnedValue = {amount, setAmount, acct, setAcct, category, setCategory, date, setDate, clicked, setClicked, validAmount, setValidAmount, validAcct, setValidAcct, transactions, name, setName, addedTransaction, handleDelete, validDate, setValidDate, editAmount, setEditAmount, editAcct, setEditAcct, handleEdit, popUp, setPopUp, search, setSearch, searchResult }
     return (
         <DataContext.Provider value={returnedValue}>
             {children}

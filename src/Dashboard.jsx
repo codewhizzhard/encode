@@ -5,10 +5,11 @@ import { Link } from "react-router-dom"
 
 const Dashboard = () => {
 
-    const { transactions } = useContext(DataContext)
-    const [currency, setCurrency] = useState([]);
+    const { searchResult, search, setSearch } = useContext(DataContext)
+    //const [currency, setCurrency] = useState([]);
 
-    useEffect(() => {
+    // not in use for now, because of time.
+   /*  useEffect(() => {
         /// getting different currencies from an api
         const fetchData = async() => {
             try {
@@ -20,23 +21,26 @@ const Dashboard = () => {
             }
         }
         fetchData()
-    }, [])
+    }, []) */
+    
   return (
-    <main className="h-full overflow-y-scroll">
-        <section className="h-full bg-gray-300">
+    /* using searchResult instead of transactions, this helps with search or filtering of transaction(s) */
+    <main className="flex flex-col h-full gap-1">
+        <input type="text" autoFocus value={search} onChange={(e) => setSearch(e.target.value)} className="text-center border-2" placeholder="search base on recipient's name or id"/>
+        <section className="h-[70vh] overflow-y-scroll bg-gray-300">
             {/* if there is transaction loads out the total transaction in digit */}
-            { transactions?.length ? <p className="p-2">Total transactions: {transactions.length}</p> : <p>No transaction</p> }
+            { searchResult?.length ? <p className="p-2">Total transactions: {searchResult.length}</p> : <p>No transaction</p> }
             <ul className="flex flex-row justify-between">
                 <li className="pl-2">ID</li>
                 <li>RECIPIENT'S NAME</li>
                 <li>RECIPIENT'S ACCT</li>
                 <li className="pr-2">AMOUNT</li>
             </ul>
-            {transactions?.length ? transactions.map((transaction) => (
+            {searchResult?.length ? searchResult.map((transaction) => (
             <>
             {/* getting each transaction */}
             <Link to={`/dashboard/${transaction.id}`}>
-            <ol key={transaction.key} className="flex flex-row justify-between m-2 border border-red-400 hover:bg-red-300 hover:cursor-pointer">
+            <ol key={transaction.id} className="flex flex-row justify-between m-2 border border-red-400 hover:bg-red-300 hover:cursor-pointer">
                 <li>{transaction.id}</li>
                 <li>{transaction.name}</li>
                 <li>{transaction.acct}</li>

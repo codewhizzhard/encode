@@ -19,5 +19,5 @@ then inpute this in terminal: npm run dev, to start the project
 then ctr left click on the port
 then send and receive your data
 
-There are things that are not done by which are in the test, because the time is not enough
+There are things that are not done by which are in the test, because the time is not enough, It will work well on bigger screen, it will look somehow on mobile because there is no enough time to design all the responsiveness.
 # encode
