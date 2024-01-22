@@ -35,13 +35,15 @@ const EditTransaction = () => {
           <form className="grid pt-5 place-content-center" onSubmit={(e) => e.preventDefault()}>
             <article>
               <label htmlFor="editamount" className="block">Edit Amount:</label>
-              <input type="number" id="editamount" required autoFocus className="text-black" value={editAmount} onChange={(e) => setEditAmount(e.target.value)}/>
+              <input type="number" id="editamount" required autoFocus className="pl-2 text-black" value={editAmount} onChange={(e) => setEditAmount(e.target.value)}/>
             </article>
             <article>
               <label htmlFor="editacct" className="block">Edit Acct:</label>
-              <input type="number" name="editacct" id="editacct"  className="text-black" value={editAcct} onChange={(e) => setEditAcct(e.target.value)} required/>
+              <input type="number" name="editacct" id="editacct"  className="pl-2 text-black" value={editAcct} onChange={(e) => setEditAcct(e.target.value)} required/>
             </article>
-            <button type="submit" onClick={() => handleEdit(transaction.id, transaction.name)}>submit</button>
+            { editAcct && editAmount &&
+                <button type="submit" onClick={() => handleEdit(transaction.id, transaction.name)} className="pt-2">submit</button>
+            }
           </form>
         </section>
         }
