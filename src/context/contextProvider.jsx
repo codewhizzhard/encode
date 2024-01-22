@@ -21,10 +21,11 @@ export const ContextProvider = ({ children }) => {
     const [editAmount, setEditAmount] = useState();
     const [editAcct, setEditAcct] = useState();
     const [popUp, setPopUp] = useState(false)
+    const [editName, setEditName] = useState("");
 
     // add more transaction to the transaction in the array
     const addedTransaction = async() => {
-        const id = transactions.length ? transactions[transactions.length -1].id + 1 : 1 
+        const id = transactions.length ? transactions[transactions.length - 1].id + 1 : 1 
         const message = `you have sent $${validAmount} to  ${name}(${validAcct})`
         const addedtransaction = {id, validDate, name, acct, amount, category, message}
         try {
@@ -62,9 +63,9 @@ export const ContextProvider = ({ children }) => {
         
       }
       // edit function, to edit only amount and account number
-      const handleEdit = async(id) => {
-        const message = `you have sent $${validAmount} to  ${name}(${validAcct})`
-        const edit = {id, validDate: validDate, name: name, acct: editAcct, amount: editAmount, category: category, message: message}
+      const handleEdit = async(id, name) => {
+        const message = `you have sent $${editAmount} to ${name} (${editAcct})`
+        const edit = {id, validDate: validDate, name, acct: editAcct, amount: editAmount, category: category, message}
         try {
           const response = await axios.put(`/transactions/${id}`, edit)
           setTransactions(transactions.map((transaction) => transaction.id === id ? {...response.data} : transaction))

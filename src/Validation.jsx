@@ -49,7 +49,7 @@ const Validation = () => {
             <input type="password" className="w-1/2 h-8 pl-2" placeholder="password" required value={passcode} onChange={(e) => setPasscode(e.target.value)}/>
         </div>
         {
-            amount !== validAmount || acct !== validAcct || date !== validDate || !passcode ? "g" : 
+            amount !== validAmount || acct !== validAcct || date !== validDate || !passcode ? "" : 
             <button className="absolute px-4 py-1 bg-blue-600 rounded-md bottom-1 right-2 hover:bg-red-500" type="submit">SEND</button> 
         }
         <button className="absolute bottom-1 left-2" onClick={() => setClicked(false)}><FaArrowLeft className="h-6 text-gray-600 w-7"/></button>

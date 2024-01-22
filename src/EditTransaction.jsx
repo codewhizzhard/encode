@@ -41,7 +41,7 @@ const EditTransaction = () => {
               <label htmlFor="editacct" className="block">Edit Acct:</label>
               <input type="number" name="editacct" id="editacct"  className="text-black" value={editAcct} onChange={(e) => setEditAcct(e.target.value)} required/>
             </article>
-            <button type="submit" onClick={() => handleEdit(transaction.id)}>submit</button>
+            <button type="submit" onClick={() => handleEdit(transaction.id, transaction.name)}>submit</button>
           </form>
         </section>
         }
